@@ -10,3 +10,7 @@ Java 11.0.15.1
 Maven 3.8.6
 Mysql 8.0.29(windows)  8.0.27(linux)
 Reids 5.0.14.1
+RocketMQ 5.0.0
+Nacos 2.0.4
+Springboot 2.3.7.Release
+
