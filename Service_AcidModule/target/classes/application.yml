@@ -1,0 +1,64 @@
+
+server:
+  port: 9292
+  servlet:
+    context-path: /api/v1
+
+# 数据源配置
+spring:
+  datasource:
+    username: root
+    password: ndwmd1230
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://202.113.88.23:3306/hsjc?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8&allowMultiQueries=true
+    type: com.zaxxer.hikari.HikariDataSource
+    dbcp2:
+      initial-size: 5
+      max-idle: 8
+      max-wait-millis: 60000
+
+  application:
+    name: Service.ALIBABA.AcidModule
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+
+
+    inetutils:
+      ignored-interfaces: 'VMware Virtual Ethernet Adapter for VMnet1,VMware Virtual Ethernet Adapter for VMnet8'
+
+
+  security:
+    user:
+      name: admin
+      password: admin
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        min-idle: 0
+        max-wait: -1s
+        max-idle: 8
+    lettuce:
+      shutdown-timeout: 100ms
+    timeout: 8000
+  cache:
+    type: redis
+  profiles:
+    active: dev
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+

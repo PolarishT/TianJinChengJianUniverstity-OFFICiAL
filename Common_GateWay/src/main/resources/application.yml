@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: Service.ALIBABA.Gateway
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+    gateway:
+      routes:
+        - id: Service.AcidModule
+          uri:
+            lb://Service_AcidModule
+          predicates:
+            - Path=/api/v1/**
+        - id: Service.Acid2Module
+          uri:
+            lb://Service_Acid2Module
+          predicates:
+            - Path=/api/v1/**
+    inetutils:
+      ignored-interfaces: 'VMware Virtual Ethernet Adapter for VMnet1,VMware Virtual Ethernet Adapter for VMnet8'
+
+
+
+
+server:
+  port: 9494
